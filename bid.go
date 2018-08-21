@@ -44,6 +44,8 @@ type Bid struct {
 	Exp            int            `json:"exp,omitempty"`            // Advisory as to the number of seconds the bidder is willing to wait between the auction and the actual impression.
 	ContentType    string         `json:"-"`                        // content of the bid
 	MediaType      string         `json:"-"`                        // media of the impression e.g. video/display
+	OrigCurrency   string         `json:"orig_currency"`            // original currency code before converting to USD
+	ExchRate       string         `json:"exch_rate"`                // exchange rate from original currency to USD
 	Ext            Extension      `json:"ext,omitempty"`
 }
 
