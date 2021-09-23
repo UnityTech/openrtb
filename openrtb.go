@@ -303,7 +303,7 @@ type RegExtension struct {
 
 // UserExtension Extension object for User
 type UserExtension struct {
-	Consent string  `json:"consent,omitempty"`
+	Consent int32   `json:"consent,omitempty"` // Consent indicates user has provided GDPR consent. 0 = No Consent 1 = User has consented
 	SdkData SdkData `json:"sdkdata,omitempty"`
 }
 
