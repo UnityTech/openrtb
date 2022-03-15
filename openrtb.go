@@ -305,6 +305,7 @@ type RegExtension struct {
 // UserExtension Extension object for User
 type UserExtension struct {
 	Consent string  `json:"consent,omitempty"`
+	GamerId string  `json:"gamerid,omitempty"`
 	SdkData SdkData `json:"sdkdata,omitempty"`
 }
 
