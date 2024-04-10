@@ -2,6 +2,7 @@ package openrtb
 
 import (
 	"encoding/json"
+	"errors"
 	"strconv"
 )
 
@@ -49,5 +50,29 @@ func (n *StringOrNumber) UnmarshalJSON(data []byte) error {
 		}
 		*n = StringOrNumber(strconv.Itoa(v))
 	}
+	return nil
+}
+
+// BoolOrNumber attemps to fix OpenRTB incompatibilities where a field is expected as bool but the spec expects int values. This was not seen till now, but some mediation partners will follow the spec closely.
+type BoolOrNumber bool
+
+// UnmarshalJSON implements json.Unmarshaler
+func (b *BoolOrNumber) UnmarshalJSON(data []byte) error {
+	var val interface{}
+	if err := json.Unmarshal(data, &val); err != nil {
+		return err
+	}
+
+	switch v := val.(type) {
+	case bool:
+		*b = BoolOrNumber(v)
+	case float64:
+		// When unmarshaling JSON into an interface value, Unmarshal stores JSON numbers in the interface value float64
+		*b = BoolOrNumber(v != 0)
+	default:
+
+		return errors.New("BoolOrInt: invalid type")
+	}
+
 	return nil
 }
