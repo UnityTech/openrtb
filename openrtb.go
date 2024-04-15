@@ -841,10 +841,10 @@ type ChannelEntity struct {
 
 // RegExtension Extension object for Regulations
 type RegExtension struct {
-	GDPR      int    `json:"gdpr,omitempty"`
-	LGPD      bool   `json:"lgpd,omitempty"`
-	PIPL      bool   `json:"pipl,omitempty"`
-	USPrivacy string `json:"us_privacy,omitempty"`
+	GDPR      int          `json:"gdpr,omitempty"`
+	LGPD      BoolOrNumber `json:"lgpd,omitempty"`
+	PIPL      BoolOrNumber `json:"pipl,omitempty"`
+	USPrivacy string       `json:"us_privacy,omitempty"`
 }
 
 // UserExtension Extension object for User
