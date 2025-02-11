@@ -56,7 +56,7 @@ func TestAudio_Validate(t *testing.T) {
 		},
 		CompanionType: []int{VASTCompanionStatic, VASTCompanionHTML},
 	}
-	if exp, got := ErrInvalidAudioNoMimes, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidAudioNoMimes, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 }
