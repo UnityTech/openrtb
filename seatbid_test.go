@@ -9,7 +9,7 @@ import (
 
 func TestSeatBid_Validate(t *testing.T) {
 	subject := &SeatBid{}
-	if exp, got := ErrInvalidSeatBidBid, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidSeatBidBid, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 }

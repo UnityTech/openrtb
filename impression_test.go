@@ -55,11 +55,11 @@ func TestImpression(t *testing.T) {
 
 func TestImpression_Validate(t *testing.T) {
 	subject := &Impression{}
-	if exp, got := ErrInvalidImpNoID, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidImpNoID, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 	subject = &Impression{ID: "IMPID", Banner: &Banner{}, Video: &Video{}}
-	if exp, got := ErrInvalidImpMultiAssets, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidImpMultiAssets, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 }

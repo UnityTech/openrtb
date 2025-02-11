@@ -74,15 +74,15 @@ func TestBidRequest_complex(t *testing.T) {
 
 func TestBidRequest_Validate(t *testing.T) {
 	subject := &BidRequest{}
-	if exp, got := ErrInvalidReqNoID, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidReqNoID, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 	subject = &BidRequest{ID: "RID"}
-	if exp, got := ErrInvalidReqNoImps, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidReqNoImps, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 	subject = &BidRequest{ID: "A", Imp: []Impression{{ID: "1"}}, Site: &Site{}, App: &App{}}
-	if exp, got := ErrInvalidReqMultiInv, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidReqMultiInv, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 }

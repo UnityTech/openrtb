@@ -52,11 +52,11 @@ func TestVideo(t *testing.T) {
 
 func TestVideo_Validate(t *testing.T) {
 	subject := &Video{}
-	if exp, got := ErrInvalidVideoNoMimes, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidVideoNoMimes, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 	subject = &Video{Mimes: []string{"video/mp4"}}
-	if exp, got := ErrInvalidVideoNoLinearity, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidVideoNoLinearity, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 	subject = &Video{
@@ -65,7 +65,7 @@ func TestVideo_Validate(t *testing.T) {
 		Linearity:   VideoLinearityNonLinear,
 		Mimes:       []string{"video/mp4"},
 	}
-	if exp, got := ErrInvalidVideoNoProtocols, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidVideoNoProtocols, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 }
