@@ -56,11 +56,11 @@ func TestBidResponse_complex(t *testing.T) {
 
 func TestBidResponse_Validate(t *testing.T) {
 	subject := &BidResponse{}
-	if exp, got := ErrInvalidRespNoID, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidRespNoID, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 	subject = &BidResponse{ID: "RID"}
-	if exp, got := ErrInvalidRespNoSeatBids, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidRespNoSeatBids, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 }

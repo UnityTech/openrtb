@@ -35,11 +35,11 @@ func TestBid(t *testing.T) {
 
 func TestBid_Validate(t *testing.T) {
 	subject := &Bid{}
-	if exp, got := ErrInvalidBidNoID, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidBidNoID, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 	subject = &Bid{ID: "BIDID"}
-	if exp, got := ErrInvalidBidNoImpID, subject.Validate(); !errors.Is(exp, got) {
+	if exp, got := ErrInvalidBidNoImpID, subject.Validate(); !errors.Is(got, exp) {
 		t.Fatalf("expected %v, got %v", exp, got)
 	}
 }
