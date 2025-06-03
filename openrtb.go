@@ -728,6 +728,8 @@ type User struct {
 	CustomData string        `json:"customdata,omitempty"` // Optional feature to pass bidder data that was set in the exchange's cookie. The string must be in base85 cookie safe characters and be in any format. Proper JSON encoding must be used to include "escaped" quotation marks.
 	Geo        *Geo          `json:"geo,omitempty"`
 	Data       []Data        `json:"data,omitempty"`
+	Consent    string        `json:"consent,omitempty"` // GDPR TCF consent string
+	EIDs       []EID         `json:"eids,omitempty"`
 	Ext        UserExtension `json:"ext,omitempty"`
 }
 
@@ -750,6 +752,21 @@ type Segment struct {
 	Name  string    `json:"name,omitempty"`
 	Value string    `json:"value,omitempty"`
 	Ext   Extension `json:"ext,omitempty"`
+}
+
+// EID (Extended ID) support in the OpenRTB specification allows buyers to use audience data in real-time
+// bidding. This object can contain one or more UIDs from a single source or a technology provider.
+type EID struct {
+	Source string    `json:"source,omitempty"` // Source or technology provider responsible for the set of included IDs. Expressed as a top-level domain.
+	UIDs   []UID     `json:"uids,omitempty"`   // Array of extended ID UID objects from the given source.
+	Ext    Extension `json:"ext,omitempty"`
+}
+
+// UID objects contain a single user identifier provided as part of extended identifiers.
+type UID struct {
+	ID        string    `json:"id,omitempty"`    // The identifier for the user.
+	AgentType int       `json:"atype,omitempty"` // Type of user agent the ID is from.
+	Ext       Extension `json:"ext,omitempty"`
 }
 
 // Regulations object contains any legal, governmental, or industry regulations that apply to the request. The
