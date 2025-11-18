@@ -22,7 +22,6 @@ func TestBidRequest(t *testing.T) {
 				ID:     "1",
 				Secure: 1,
 				Banner: &Banner{W: 300, H: 250, Pos: AdPosAboveFold, BAttr: []int{CreativeAttributeUserInitiated}},
-				Instl:  0,
 			},
 		},
 		Site: &Site{
