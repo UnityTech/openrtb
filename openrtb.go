@@ -774,7 +774,7 @@ type UID struct {
 // regulations for the United States Children's Online Privacy Protection Act ("COPPA").
 type Regulations struct {
 	Coppa     int          `json:"coppa,omitempty"`      // Flag indicating if this request is subject to the COPPA regulations established by the USA FTC, where 0 = no, 1 = yes.
-	GDPR      int          `json:"gdpr,omitempty"`       // Flag that indicates whether or not the request is subject to GDPR regulations 0 = No, 1 = Yes, omission indicates Unknown.
+	GDPR      *int         `json:"gdpr,omitempty"`       // Flag that indicates whether the request is subject to GDPR regulations 0 = No, 1 = Yes, omission indicates Unknown.
 	USPrivacy string       `json:"us_privacy,omitempty"` // Communicates signals regarding consumer privacy under US privacy regulation.
 	Ext       RegExtension `json:"ext,omitempty"`
 }
