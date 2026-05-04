@@ -757,9 +757,12 @@ type Segment struct {
 // EID (Extended ID) support in the OpenRTB specification allows buyers to use audience data in real-time
 // bidding. This object can contain one or more UIDs from a single source or a technology provider.
 type EID struct {
-	Source string    `json:"source,omitempty"` // Source or technology provider responsible for the set of included IDs. Expressed as a top-level domain.
-	UIDs   []UID     `json:"uids,omitempty"`   // Array of extended ID UID objects from the given source.
-	Ext    Extension `json:"ext,omitempty"`
+	Inserter string    `json:"inserter,omitempty"` // The canonical domain name of the entity that caused the ID array element to be added.
+	Source   string    `json:"source,omitempty"`   // Source or technology provider responsible for the set of included IDs. Expressed as a top-level domain.
+	Matcher  string    `json:"matcher,omitempty"`  // Technology providing the match method as defined in mm.
+	MM       *int      `json:"mm,omitempty"`       // The match method as defined in mm.
+	UIDs     []UID     `json:"uids,omitempty"`     // Array of extended ID UID objects from the given source.
+	Ext      Extension `json:"ext,omitempty"`
 }
 
 // UID objects contain a single user identifier provided as part of extended identifiers.
