@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/UnityTech/openrtb/v3"
-	. "github.com/UnityTech/openrtb/v3/native/request"
+	"github.com/Unity-Technologies/openrtb/v3"
+	. "github.com/Unity-Technologies/openrtb/v3/native/request"
 )
 
 func TestRequest(t *testing.T) {
