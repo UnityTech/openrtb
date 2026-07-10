@@ -1,6 +1,6 @@
 # OpenRTB
 
-[![Build Status](https://travis-ci.org/UnityTech/openrtb.svg?branch=master)](https://travis-ci.org/UnityTech/openrtb)
+[![Build Status](https://travis-ci.org/Unity-Technologies/openrtb.svg?branch=master)](https://travis-ci.org/Unity-Technologies/openrtb)
 
 OpenRTB structs and validations for Go.
 
@@ -13,7 +13,7 @@ Requires Go 1.8+ for proper `json.RawMessage` marshaling.
 To install, use `go get`:
 
 ```shell
-go get github.com/UnityTech/openrtb/v3
+go get github.com/Unity-Technologies/openrtb/v3
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ import (
   "log"
   "os"
 
-  "github.com/UnityTech/openrtb/v3"
+  "github.com/Unity-Technologies/openrtb/v3"
 )
 
 func main() {

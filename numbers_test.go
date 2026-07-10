@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	. "github.com/UnityTech/openrtb/v3"
+	. "github.com/Unity-Technologies/openrtb/v3"
 )
 
 func TestNumberOrString(t *testing.T) {

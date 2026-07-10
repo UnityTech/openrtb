@@ -1,6 +1,6 @@
 package response
 
-import "github.com/UnityTech/openrtb/v3"
+import "github.com/Unity-Technologies/openrtb/v3"
 
 // Data object contains response data.
 type Data struct {

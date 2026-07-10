@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	. "github.com/UnityTech/openrtb/v3"
+	. "github.com/Unity-Technologies/openrtb/v3"
 )
 
 func TestPMP(t *testing.T) {

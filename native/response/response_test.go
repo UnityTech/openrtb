@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"testing"
 
-	. "github.com/UnityTech/openrtb/v3/native/response"
+	. "github.com/Unity-Technologies/openrtb/v3/native/response"
 )
 
 func TestResponse(t *testing.T) {
