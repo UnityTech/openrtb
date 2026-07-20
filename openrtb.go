@@ -446,7 +446,7 @@ const (
 	CreativeAttributeExtremeAnimation                = 10
 	CreativeAttributeSurveys                         = 11
 	CreativeAttributeTextOnly                        = 12
-	CreativeAttributeUserInitiated                   = 13
+	CreativeAttributeUserInteractive                 = 13
 	CreativeAttributeWindowsDialogOrAlert            = 14
 	CreativeAttributeHasAudioWithPlayer              = 15
 	CreativeAttributeAdProvidesSkipButton            = 16
@@ -508,6 +508,12 @@ const (
 	VideoProtoVAST4Wrapper     = 8
 	AudioProtocolDAAST1        = 9
 	AudioProtocolDAAST1Wrapper = 10
+	VideoProtoVAST41           = 11
+	VideoProtoVAST41Wrapper    = 12
+	VideoProtoVAST42           = 13
+	VideoProtoVAST42Wrapper    = 14
+	VideoProtoVAST43           = 15
+	VideoProtoVAST43Wrapper    = 16
 )
 
 // 5.9 Video Placement Types
